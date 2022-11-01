@@ -1,0 +1,45 @@
+.main-nav {
+    width: 100vw;
+    height: 50px;
+    background-color: #252525;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 -23px 25px 20px #252525;
+}
+
+.main-nav > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.main-nav > div > svg {
+    font-size: 45px;
+    margin: 0 10px;
+}
+
+.main-nav > div > a {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2px 7px 0;
+    text-decoration: none;
+    transition: opacity .3s ease, border .5s ease;
+    border-bottom: 2px solid #252525;
+}
+
+.main-nav > div > a:hover {
+    opacity: .5;
+}
+
+.main-nav > div > a.selected {
+    border-bottom: 2px solid aliceblue;
+}

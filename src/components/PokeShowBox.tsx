@@ -7,19 +7,11 @@ interface Props {
 
 export default function PokeShowBox({ pokemonInfo }: Props) {
   let { name } = pokemonInfo;
-  name = name
-    ?.toUpperCase()
-    .replace("-", " ")
-    .replace("-", " ")
-    .replace("-", " ")
-    .replace("-", " ")
-    .replace("-", " ");
-  console.log(pokemonInfo);
 
   return (
     <div className="poke-show-box">
       <div className="first-div">
-        <h3>{name}</h3>
+        <h3>{name?.toUpperCase().replace("-", " ").replace("-", " ").replace("-", " ").replace("-", " ")}</h3>
         <img
           className="primary-image"
           src={pokemonInfo.sprites.front_default}

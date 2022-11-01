@@ -1,0 +1,32 @@
+.loading {
+    z-index: 999999999999;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(220.55deg, #5f4452 0%, #d16024 100%);
+    background-size: 300%;
+    background-position: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease;
+}
+
+.loading.off {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading, .loading * {
+    user-select: none;
+}
+
+.loading > svg {
+    font-size: 100px;
+    animation: loading 1s ease infinite;
+}
+
+@keyframes loading {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

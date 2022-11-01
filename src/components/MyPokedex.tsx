@@ -3,7 +3,7 @@ import { myPokedex } from "../services/localstorage";
 import "./MyPokedex.css";
 import PokeShowBox from "./PokeShowBox";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
-import { numberWithCommas } from "../numberWithCommas";
+import { numberWithCommas } from "../utils";
 
 export default function MyPokedex() {
   const pokedex = myPokedex();

@@ -45,6 +45,10 @@ html {
   background-position: right;
 }
 
+main {
+  margin-top: 50px;
+}
+
 * {
     color: aliceblue;
     box-sizing: border-box;

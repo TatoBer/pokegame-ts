@@ -1,0 +1,41 @@
+.energy-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 40px;
+    cursor: pointer;
+}
+
+.energy-bar > h5 {
+    margin-right: 8px;
+    font-weight: 200;
+    opacity: .5;
+    user-select: none;
+    cursor: default;
+}
+
+.energy-bar > div {
+    border: 2px solid #252525;
+    outline: 1px solid aliceblue;
+    width: 90px;
+    height: 18px;
+    border-radius: 5000px;
+    border-top-right-radius: 0;
+    display: flex;
+    overflow: hidden;
+}
+
+.energy-bar > div > div {
+    background-color: aliceblue;
+    height: 100%;
+    transition: width 1s ease;
+}
+
+.energy-bar > svg {
+    fill: aliceblue;
+    font-size: 24px;
+    position: absolute;
+    right: -13px;
+    filter: drop-shadow(-4px 1px 0 #252525);
+}
