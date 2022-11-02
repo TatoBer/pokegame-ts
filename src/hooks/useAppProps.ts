@@ -16,6 +16,10 @@ const useAppProps = () => {
     });
   };
 
+  const handleTrain = (pokemonId:number)=> {
+    wasteEnergy(10)
+  }
+
   const APP_PROPS: AppProps = {
     charged,
     allPokemons,
@@ -25,6 +29,7 @@ const useAppProps = () => {
     pokedex,
     pick,
     handleFreeHunt,
+    handleTrain
   };
 
   return APP_PROPS;

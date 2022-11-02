@@ -12,6 +12,7 @@ export interface Pokemon {
 
 export interface PokemonInfo {
   name?: string;
+  experience?: number
   abilities: Ability[];
   base_experience: number;
   forms: { name: string; url: string }[];
@@ -52,6 +53,7 @@ export interface AppProps {
   pokedex: PokemonInfo[]
   pick: number | null
   handleFreeHunt: Function
+  handleTrain: Function
 }
 
 export interface EnergyData {

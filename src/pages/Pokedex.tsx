@@ -1,4 +1,7 @@
+import PokedexItem from "../components/PokedexItem";
+import PokemonPopUp from "../components/PokemonPopUp";
 import { AppProps } from "../types";
+import "./Pokedex.css";
 
 interface Props {
   APP_PROPS: AppProps;
@@ -7,7 +10,17 @@ interface Props {
 export default function Pokedex({ APP_PROPS }: Props) {
   return (
     <main className="pokedex">
-      {APP_PROPS.pokedex.map(pokemon=>{return <h4>{pokemon.name}</h4>})}
+      {/* <PokemonPopUp pokemon={APP_PROPS.pokedex[5]} /> */}
+      {APP_PROPS.pokedex.map((pokemon) => {
+        return (
+          <PokedexItem
+            energy={APP_PROPS.energy}
+            handleTrain={APP_PROPS.handleTrain}
+            key={pokemon.id}
+            pokemon={pokemon}
+          />
+        );
+      })}
     </main>
   );
 }

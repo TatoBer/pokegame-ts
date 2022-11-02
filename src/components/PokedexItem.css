@@ -1,0 +1,151 @@
+.pokedex-item {
+  width: 190px;
+  height: 280px;
+  border-radius: 25px;
+  background: linear-gradient(to bottom, #f0f8ff07, #f0f8ff25);
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #f0f8ff33;
+  outline: 5px solid #f0f8ff10;
+  transition: all 0.3s ease;
+}
+
+
+.pokedex-item * {
+  user-select: none;
+  z-index: 3;
+  transition: color .3s ease, opacity .3s ease, transform .3s ease;
+}
+
+.pokedex-item > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pokedex-item > span > h6 {
+  text-align: center;
+  font-size: 14px;
+}
+
+.pokedex-item > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pokedex-item > div > h5 {
+  font-weight: 300;
+  opacity: 0.7;
+}
+
+.pokedex-item > img {
+  height: 150px;
+}
+
+.back-svg {
+  fill: #252525;
+  font-size: 200px;
+  opacity: 0.05;
+  position: absolute;
+  z-index: 2;
+  transition: all .3s ease;
+}
+
+.pokedex-item > .background {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #ffdd9f, #ffbf49);
+    position: absolute;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.pokedex-item:hover > .background {
+    opacity: 1;
+}
+
+.pokedex-item:hover > .back-svg {
+    fill: aliceblue;
+    opacity: .4;
+}
+
+.pokedex-item:hover * {
+    color: #252525;
+}
+
+.pokedex-item:hover h4, .pokedex-item:hover h6 {
+    opacity: .7;
+}
+
+.pokedex-item:hover {
+    border: 2px solid #e5c382;
+    outline: 5px solid #ffdd9f48;
+    box-shadow: 0 0 25px 3px #e5c382;
+}
+
+.pokedex-item:hover > img {
+    animation: bounce 1s ease infinite;
+}
+
+.pokedex-item:hover > div {
+  transform: translateY(100px);
+}
+
+.pokedex-item:hover > span {
+  transform: translateY(-100px);
+}
+
+.pokedex-item > .button-1 {
+  padding: 8px 15px;
+  position: absolute;
+  top: 10px;
+  background: linear-gradient(220.55deg, #e86232 0%, #539cee 100%);
+  transform: translateY(-100px);
+  transition: transform .3s ease, opacity .3s ease, filter .3s ease;
+  opacity: 1;
+}
+
+.pokedex-item:hover > .button-1 {
+  color: aliceblue;
+  transform: none;
+}
+
+.pokedex-item:hover > .button-1:hover {
+  opacity: .5;
+}
+
+.pokedex-item > .button-2 {
+  padding: 8px 15px;
+  position: absolute;
+  bottom: 10px;
+  background: linear-gradient(220.55deg, #42e6a1 0%, #d549ce 100%);
+  transform: translateY(100px);
+  transition: transform .3s ease, opacity .3s ease, filter .3s ease;
+  opacity: 1;
+}
+
+.pokedex-item:hover > .button-2 {
+  color: aliceblue;
+  transform: none;
+}
+
+.pokedex-item:hover > .button-2:hover {
+  opacity: .5;
+}
+
+.pokedex-item > button.inactive {
+  filter: grayscale(1);
+  pointer-events: none;
+}

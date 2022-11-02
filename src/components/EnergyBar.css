@@ -23,7 +23,7 @@
     border-top-left-radius: 5000px;
     border-bottom-left-radius: 5000px;
     border-bottom-right-radius: 50px;
-    justify-content: center;
+    justify-content: flex-start ;
     align-items: center;
     display: flex;
     overflow: hidden;
