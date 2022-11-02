@@ -46,10 +46,12 @@ interface Ability {
 export interface AppProps {
   charged: Boolean;
   allPokemons: Pokemon[];
-  randomPokemon: PokemonInfo | undefined;
-  updateRandomPokemon: Function;
+  getRandomPokemon: Function;
   energy: number;
   wasteEnergy: Function;
+  pokedex: PokemonInfo[]
+  pick: number | null
+  handleFreeHunt: Function
 }
 
 export interface EnergyData {

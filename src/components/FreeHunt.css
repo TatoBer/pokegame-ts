@@ -1,0 +1,64 @@
+.free-hunt {
+    overflow: hidden;
+    background-color: #f0f8ff1e;
+    border: 2px solid #25252588;
+    outline: 6px solid #f0f8ff1e;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin: 25px 0;
+}
+
+.free-hunt * {
+    user-select: none;
+}
+
+.free-hunt > span {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 25px;
+}
+
+.free-hunt > span > h3 {
+    font-size: 25px;
+    color: #252525;
+    letter-spacing: 2px;
+    opacity: .8;
+}
+
+.free-hunt > span > button {
+    margin-top: 10px;
+    width: 190px;
+    font-size: 14px;
+    padding: 13px 0;
+}
+
+.free-hunt.inactive > span > button {
+    pointer-events: none;
+    filter: grayscale(1);
+    cursor: default;
+}
+
+.free-hunt > img {
+    width: 100px;
+    margin: 0 15px;
+    animation: bounce 1.6s ease infinite;
+    opacity: .95;
+}
+
+
+.free-hunt.inactive > img {
+    filter: grayscale(1);
+    animation: none;
+}
+
+@keyframes bounce {
+    0% {transform: translateY(-10px) scaleX(.95);}
+    50% {transform: translateY(5px);}
+    100% {transform: translateY(-10px) scaleX(.95);}
+}

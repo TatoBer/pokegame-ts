@@ -10,7 +10,7 @@ export default function EnergyBar({energy}:Props) {
     <span className="energy-bar">
         <h5>({energy}%)</h5>
         <div>
-            <div style={{width:energy || 0}}></div>
+            <div style={{width:energy}}></div>
         </div>
         <BsFillLightningChargeFill />
     </span>

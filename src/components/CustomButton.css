@@ -1,0 +1,64 @@
+.your-button {
+  /* COLORS */
+  --color-secondary: #a172b4;
+  --color-secondary-t: #a172b460;
+  --color-primary: #29a7a7;
+  --color-primary-t: #29a7a760;
+  --color-text: #ffffff;
+
+  color: var(--color-text);
+  letter-spacing: 2px;
+  font-weight: bold;
+  backdrop-filter: blur(7px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: none;
+  font-size: 14px;
+  padding: 13px;
+  border-radius: 40px;
+  font-size: 16px;
+  padding: 19.2px;
+  background: linear-gradient(
+    220.55deg,
+    #5e512d 0%,
+    #a5953c 100%
+  );
+
+}
+
+.your-button:hover {
+  transform: scale(1.1);
+}
+
+.your-button:before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  top: -180px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background-color: #fff;
+  animation: shiny-btn1 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shiny-btn1 {
+  0% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0.5;
+  }
+  81% {
+    -webkit-transform: scale(4) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}

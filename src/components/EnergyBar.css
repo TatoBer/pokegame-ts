@@ -18,10 +18,13 @@
 .energy-bar > div {
     border: 2px solid #252525;
     outline: 1px solid aliceblue;
-    width: 90px;
+    width: 100px;
     height: 18px;
-    border-radius: 5000px;
-    border-top-right-radius: 0;
+    border-top-left-radius: 5000px;
+    border-bottom-left-radius: 5000px;
+    border-bottom-right-radius: 50px;
+    justify-content: center;
+    align-items: center;
     display: flex;
     overflow: hidden;
 }
@@ -30,12 +33,13 @@
     background-color: aliceblue;
     height: 100%;
     transition: width 1s ease;
+    display: flex;
 }
 
 .energy-bar > svg {
     fill: aliceblue;
-    font-size: 24px;
+    font-size: 26px;
     position: absolute;
-    right: -13px;
+    right: -15px;
     filter: drop-shadow(-4px 1px 0 #252525);
 }

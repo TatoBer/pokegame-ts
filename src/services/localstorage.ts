@@ -35,7 +35,7 @@ const getLastPick = (): number => {
 const leftTime = () => {
   let actualDate = getActualTime();
   const lastOpen: number = actualDate - getLastPick();
-  const timeToOpen = 600;
+  const timeToOpen = 7200;
   const left = timeToOpen - lastOpen;
   return left;
 };
@@ -66,7 +66,7 @@ const getUpdatedEnergy = (): number => {
   const energyData = getEnergy();
   if (energyData.energy === 100) return 100;
   const secondRuns: number = getActualTime() - energyData.time;
-  const energyPlus: number = Math.floor(secondRuns / 30);
+  const energyPlus: number = Math.floor(secondRuns / 60);
   const energy: number = energyData.energy + energyPlus;
   if (energy > 99) return 100;
   return energy;
