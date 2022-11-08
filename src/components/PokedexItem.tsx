@@ -20,6 +20,9 @@ export default function PokedexItem({ pokemon, handleTrain, energy }: Props) {
   return (
     <>
       <div className={`pokedex-item`}>
+          <h4>{pokemon.name?.toUpperCase().replaceAll("-", " ")}</h4>
+        <img src={frontSprite ? frontSprite : questionImg} alt=" " />
+        <div>
         <span>
           {pokemon.types.map((item) => {
             return (
@@ -29,9 +32,6 @@ export default function PokedexItem({ pokemon, handleTrain, energy }: Props) {
             );
           })}
         </span>
-        <img src={frontSprite ? frontSprite : questionImg} alt=" " />
-        <div>
-          <h4>{pokemon.name?.toUpperCase().replaceAll("-", " ")}</h4>
           <h5>EXP: {pokemon.experience || 0}</h5>
         </div>
         <CustomButton onClick={openPopUp} className="button-1">
