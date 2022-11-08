@@ -1,5 +1,4 @@
 import PokedexItem from "../components/PokedexItem";
-import PokemonPopUp from "../components/PokemonPopUp";
 import { AppProps } from "../types";
 import "./Pokedex.css";
 
@@ -18,6 +17,8 @@ export default function Pokedex({ APP_PROPS }: Props) {
             handleTrain={APP_PROPS.handleTrain}
             key={pokemon.id}
             pokemon={pokemon}
+            favPokemon={APP_PROPS.favPokemon}
+            discardPokemon={APP_PROPS.discardPokemon}
           />
         );
       })}

@@ -1,0 +1,17 @@
+.proximamente > svg {
+    user-select: none;
+    pointer-events: none;
+    font-size: 200px;
+    opacity: .5;
+}
+
+.proximamente {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+.proximamente > h1 {
+    margin: 45px 0;
+}

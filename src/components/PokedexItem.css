@@ -5,7 +5,7 @@
   background: linear-gradient(to bottom, #f0f8ff07, #f0f8ff25);
   margin: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   position: relative;
@@ -16,23 +16,29 @@
   transition: all 0.3s ease;
 }
 
-
 .pokedex-item * {
   user-select: none;
   z-index: 3;
-  transition: color .3s ease, opacity .3s ease, transform .3s ease;
+  transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 
-.pokedex-item > span {
+.pokedex-item > div > span {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.pokedex-item > span > h6 {
+.pokedex-item > div > span > h6 {
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
+}
+
+.pokedex-item > h4 {
+  font-size: 17px;
+  margin: 0 5px;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .pokedex-item > div {
@@ -40,6 +46,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 5px;
 }
 
 .pokedex-item > div > h5 {
@@ -56,54 +63,56 @@
   font-size: 200px;
   opacity: 0.05;
   position: absolute;
+  margin-top: 35px;
   z-index: 2;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .pokedex-item > .background {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, #ffdd9f, #ffbf49);
-    position: absolute;
-    z-index: 1;
-    user-select: none;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity .3s ease;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #ffdd9f, #ffbf49);
+  position: absolute;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .pokedex-item:hover > .background {
-    opacity: 1;
+  opacity: 1;
 }
 
 .pokedex-item:hover > .back-svg {
-    fill: aliceblue;
-    opacity: .4;
+  fill: aliceblue;
+  opacity: 0.4;
 }
 
 .pokedex-item:hover * {
-    color: #252525;
+  color: #252525;
 }
 
-.pokedex-item:hover h4, .pokedex-item:hover h6 {
-    opacity: .7;
+.pokedex-item:hover h4,
+.pokedex-item:hover h6 {
+  opacity: 0.7;
 }
 
 .pokedex-item:hover {
-    border: 2px solid #e5c382;
-    outline: 5px solid #ffdd9f48;
-    box-shadow: 0 0 25px 3px #e5c382;
+  border: 2px solid #e5c382;
+  outline: 5px solid #ffdd9f48;
+  box-shadow: 0 0 25px 3px #e5c382;
 }
 
 .pokedex-item:hover > img {
-    animation: bounce 1s ease infinite;
+  animation: bounce 1s ease infinite;
 }
 
 .pokedex-item:hover > div {
   transform: translateY(100px);
 }
 
-.pokedex-item:hover > span {
+.pokedex-item:hover > h4 {
   transform: translateY(-100px);
 }
 
@@ -113,7 +122,7 @@
   top: 10px;
   background: linear-gradient(220.55deg, #e86232 0%, #539cee 100%);
   transform: translateY(-100px);
-  transition: transform .3s ease, opacity .3s ease, filter .3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
   opacity: 1;
 }
 
@@ -123,7 +132,7 @@
 }
 
 .pokedex-item:hover > .button-1:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .pokedex-item > .button-2 {
@@ -132,7 +141,7 @@
   bottom: 10px;
   background: linear-gradient(220.55deg, #42e6a1 0%, #d549ce 100%);
   transform: translateY(100px);
-  transition: transform .3s ease, opacity .3s ease, filter .3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
   opacity: 1;
 }
 
@@ -142,10 +151,51 @@
 }
 
 .pokedex-item:hover > .button-2:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .pokedex-item > button.inactive {
   filter: grayscale(1);
   pointer-events: none;
+}
+
+.pokedex-item .star-off {
+  fill: #534f3d;
+  position: absolute;
+  top: 10px;
+  font-size: 35px;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+  transform: translateY(-70px);
+  opacity: 1;
+}
+
+.pokedex-item:hover .star-off {
+  transform: translateY(0px);
+}
+
+.pokedex-item .star-off:hover {
+  opacity: 0.6;
+}
+
+.pokedex-item .star-on {
+  pointer-events: none;
+  fill: #534f3d;
+  position: absolute;
+  top: 10px;
+  font-size: 35px;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+  transform: translateY(-70px);
+  opacity: 0;
+}
+
+.pokedex-item.fav .star-on {
+  opacity: 1;
+}
+
+.pokedex-item.fav:hover .star-on {
+  transform: translateY(0px);
+}
+
+.pokedex-item.fav .star-on:hover {
+  opacity: 0.6;
 }

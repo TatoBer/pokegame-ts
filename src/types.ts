@@ -11,9 +11,15 @@ export interface Pokemon {
 }
 
 export interface PokemonInfo {
-  name?: string;
+  name: string;
   experience?: number
+  plus_stats?: {
+    base_stat: number;
+    stat: { name: string};
+  }[]
+  fav: Boolean
   abilities: Ability[];
+  full_stat: number
   base_experience: number;
   forms: { name: string; url: string }[];
   height: number;
@@ -54,6 +60,8 @@ export interface AppProps {
   pick: number | null
   handleFreeHunt: Function
   handleTrain: Function
+  favPokemon: Function
+  discardPokemon: Function
 }
 
 export interface EnergyData {

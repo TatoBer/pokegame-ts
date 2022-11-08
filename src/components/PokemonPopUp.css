@@ -95,7 +95,8 @@
 .pokemon-popup > div > .buttons-div > button {
     padding: 8px 15px;
     opacity: 1;
-    margin: 0 25px;
+    margin: 0 17px;
+    user-select: none;
 }
 
 .pokemon-popup > div > .buttons-div > .button-1 {
@@ -104,4 +105,43 @@
 
 .pokemon-popup > div > .buttons-div > .button-2 {
     background: linear-gradient(220.55deg, #911818 0%, #f88d72 100%);
+}
+
+.pokemon-popup > div > .buttons-div > button.inactive {
+    filter: grayscale(1);
+    pointer-events: none;
+}
+
+.pokemon-popup > div > .stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pokemon-popup > div > .stats > h4 {
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.pokemon-popup > div > .stats > h6 {
+    font-size: 13px;
+    background: linear-gradient(to left, transparent, #25252548, transparent);
+    padding: 5px 12px;
+    width: 300px;
+    text-align: center;
+    margin: 3px 0;
+    letter-spacing: .4px;
+    font-weight: 400;
+    font-style: italic
+}
+
+.pokemon-popup > div > .stats > h6 > b {
+    font-style: normal;
+}
+
+.pokemon-popup > div > .stats > h6 > b > b {
+    color: #36ec36;
+    font-weight: 300;
 }

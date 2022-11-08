@@ -47,13 +47,13 @@
 .free-hunt > img {
   width: 100px;
   margin: 0 15px;
-  animation: bounce 1.6s ease infinite;
+  animation: bounce 1.6s ease infinite, opacity01 2s ease;
   opacity: 0.95;
 }
 
 .free-hunt.inactive > img {
   filter: grayscale(1);
-  animation: none;
+  animation: opacity01 2s ease;
 }
 
 @keyframes bounce {

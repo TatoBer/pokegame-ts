@@ -5,6 +5,7 @@ import NavMain from "./components/NavMain";
 import useAppProps from "./hooks/useAppProps";
 import Home from "./pages/Home";
 import Pokedex from "./pages/Pokedex";
+import Proximamente from "./pages/Proximamente";
 
 function App() {
 
@@ -19,6 +20,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home APP_PROPS={APP_PROPS} />} />
           <Route path="/pokedex" element={<Pokedex APP_PROPS={APP_PROPS} />} />
+          <Route path="/shop" element={<Proximamente />} />
+          <Route path="/arena" element={<Proximamente />} />
         </Routes>
       </BrowserRouter>
     </>

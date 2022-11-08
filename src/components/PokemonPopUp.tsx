@@ -8,9 +8,18 @@ import { useState } from "react";
 interface Props {
   pokemon: PokemonInfo;
   closeClick: Function;
+  trainPokemon: Function;
+  energy: number;
+  discardPokemon: Function
 }
 
-export default function PokemonPopUp({ pokemon, closeClick }: Props) {
+export default function PokemonPopUp({
+  pokemon,
+  closeClick,
+  trainPokemon,
+  energy,
+  discardPokemon
+}: Props) {
   const [close, setClose] = useState<Boolean>(false);
 
   const closePopUp = () => {
@@ -19,6 +28,13 @@ export default function PokemonPopUp({ pokemon, closeClick }: Props) {
       closeClick();
     }, 250);
   };
+
+  const handleDiscard =() => {
+    closePopUp()
+    setTimeout(() => {
+      discardPokemon(pokemon.id);
+    }, 250);
+  }
 
   const frontSprite = pokemon.sprites.front_default;
   const backSprite = pokemon.sprites.back_default;
@@ -50,8 +66,65 @@ export default function PokemonPopUp({ pokemon, closeClick }: Props) {
         </div>
 
         <div className="buttons-div">
-          <CustomButton className="button-1">ENTRENAR</CustomButton>
-          <CustomButton className="button-2">DESCARTAR</CustomButton>
+          <CustomButton
+            onClick={() => trainPokemon(pokemon.id)}
+            className={`button-1 ${energy < 10 ? "inactive" : ""}`}
+          >
+            ENTRENAR
+          </CustomButton>
+          <CustomButton onClick={()=>handleDiscard()} className="button-2">DESCARTAR</CustomButton>
+        </div>
+
+        <div className="stats">
+          <h4>ESTADISTICAS:</h4>
+          <h6>
+            HP:{" "}
+            <b>
+              {pokemon.stats[0].base_stat}
+              {pokemon.plus_stats && (
+                <b>{" +" + pokemon.plus_stats[0].base_stat}</b>
+              )}
+            </b>
+          </h6>
+          <h6>
+            ATAQUE:{" "}
+            <b>
+              {pokemon.stats[1].base_stat}
+              {pokemon.plus_stats && (
+                <b>{" +" + pokemon.plus_stats[1].base_stat}</b>
+              )}
+            </b>
+          </h6>
+          <h6>
+            DEFENSA:{" "}
+            <b>
+              {pokemon.stats[2].base_stat}
+              {pokemon.plus_stats && (
+                <b>{" +" + pokemon.plus_stats[2].base_stat} </b>
+              )}
+            </b>
+          </h6>
+          <h6>
+            ATAQUE ESPECIAL:{" "}
+            <b>
+              {pokemon.stats[3].base_stat}
+              {pokemon.plus_stats && (
+                <b>{" +" + pokemon.plus_stats[3].base_stat}</b>
+              )}
+            </b>
+          </h6>
+          <h6>
+            DEFENSA ESPECIAL:{" "}
+            <b>
+              {pokemon.stats[4].base_stat}
+              {pokemon.plus_stats && (
+                <b>{" +" + pokemon.plus_stats[4].base_stat}</b>
+              )}
+            </b>
+          </h6>
+          <h6>
+            VELOCIDAD: <b>{pokemon.stats[5].base_stat}</b>
+          </h6>
         </div>
       </div>
     </div>
